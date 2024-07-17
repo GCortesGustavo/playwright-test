@@ -1,18 +1,14 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
-
-test('get started linkk', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+test('test', async ({ page }) => {
+  await page.goto('https://platzi.com/');
+  await page.getByRole('link', { name: 'Explorar' }).click();
+  await page.goto('https://platzi.com/empresas/');
+  await page.goto('https://platzi.com/empresas/?__cf_chl_rt_tk=b_PFSbyxuKFO4CS.hMmlNDVjuyqqNkqz3qQt7mvAWCs-1721188391-0.0.1.1-4970');
+  await page.goto('https://platzi.com/empresas/');
+  await page.getByRole('img', { name: 'Platzi', exact: true }).click();
+  await page.getByRole('img', { name: 'Platzi', exact: true }).click();
+  await page.goto('https://platzi.com/');
+  await page.getByRole('button', { name: 'Comunidad' }).click();
+  await page.getByRole('link', { name: 'Eventos' }).click();
 });
